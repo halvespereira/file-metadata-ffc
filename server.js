@@ -11,7 +11,6 @@ app.use(cors());
 app.use("/public", express.static(process.cwd() + "/public"));
 
 app.post("/api/fileanalyse", upload.single("upfile"), (req, res, next) => {
-	console.log(req.file);
 	res.send({
 		name: req.file.originalname,
 		type: req.file.mimetype,
